@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <!-- <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"/> -->
+
+      <link rel="stylesheet" href="../bootstrap.min.css">
+
+    <style>
+
+      body
+      {
+        background-color: #209bdc;
+      }
+      .container {
+        display: flex;
+        justify-content: center;
+        margin-top: 30px;
+      }
+
+      .table {
+        background-color: #209bdc; /* Blue color */
+        color: black; /* Set text color to white for better contrast */
+        width: 600px;
+        border: 10px solid grey;
+      }
+
+      tr {
+        border: 5px solid white;
+      }
+
+      .userform {
+        background-color: rgb(238, 234, 137);
+        color: red;
+        font-size: 2rem;
+      }
+    </style>
+    <link rel="stylesheet" href="../bootstrap.min.css" />
+    <!-- <link rel="stylesheet" href="styles.css" /> -->
+  </head>
+  <body>
+    <div class="container">
+      <form>
+        <table  style="background-color: #209bdc;" class="table table-bordered">
+          <thead>
+            <tr>
+              <th colspan="2" class="text-center userform">Userform</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Enter Name</td>
+              <td>
+                <input
+                  class="form-control"
+                  type="text"
+                  placeholder="Enter Name"
+                />
+              </td>
+            </tr>
+
+            <tr>
+              <td>Enter Password</td>
+              <td>
+                <input
+                  class="form-control"
+                  type="password"
+                  placeholder="Enter Password"
+                />
+              </td>
+            </tr>
+
+            <tr>
+              <td>Enter Address</td>
+              <td>
+                <textarea class="form-control" rows="3"></textarea>
+              </td>
+            </tr>
+
+            <tr>
+              <td>Select Game</td>
+              <td>
+                <div class="form-check">
+                  <input type="checkbox" class="form-check-input" id="hockey" />
+                  <label class="form-check-label" for="hockey">Hockey</label>
+                </div>
+                <div class="form-check">
+                  <input type="checkbox" class="form-check-input" id="Cricket" />
+                  <label class="form-check-label" for="Cricket">Cricket</label>
+                </div>
+                <div class="form-check">
+                  <input type="checkbox" class="form-check-input" id="football" />
+                  <label class="form-check-label" for="football">Football</label>
+                </div>
+                <div class="form-check">
+                  <input type="checkbox" class="form-check-input" id="kho_kho" />
+                  <label class="form-check-label" for="kho_kho">kho_kho</label>
+                </div>
+              </td>
+            </tr>
+
+            <tr>
+              <td>Select Gender</td>
+
+              <td>
+                <div class="form-check form-check-inline">
+                  <input type="radio" name="gender" id="male" />
+                  <label for="male">Male</label>
+                </div>
+                <div class="form-check form-check-inline">
+                  <input type="radio" name="gender" id="female" />
+                  <label for="female">FeMale</label>
+                </div>
+              </td>
+            </tr>
+
+            <tr>
+              <td>Select Age</td>
+              <td>
+                <select class="form-control">
+                  <option value="">Select</option>
+                  <option value="10-15">10-15</option>
+                  <option value="15+">15+</option>
+                </select>
+              </td>
+            </tr>
+
+            <tr>
+              <td>select File</td>
+              <td>
+                <input type="file" class="form-control" id="" />
+              </td>
+            </tr>
+
+            <tr>
+              <td colspan="2">
+                <div class="text-center">
+                  <button type="button" class="btn btn-primary">
+                    Click Me
+                  </button>
+                  <button type="reset" class="btn btn-secondary">Reset</button>
+                  <button type="submit" class="btn btn-success">
+                    Submit Form
+                  </button>
+                </div>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </form>
+    </div>
+  </body>
+</html>

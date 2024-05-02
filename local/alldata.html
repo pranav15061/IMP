@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link
+    rel="stylesheet"
+    href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+  />
+
+  <style>
+    table {
+        border-collapse: collapse;
+        border-color: black;
+      }
+  </style>
+
+    
+</head>
+<body>
+
+
+    <button class="btn btn-primary" onclick="fetchdata()">Fetch data </button>
+
+    <table class="table table-bordered" id="userTable">
+        <thead>
+          <tr>
+            <th>Sr. No</th>
+            <th>Name</th>
+            <th>Username</th>
+            <th>Email</th>
+            <th>Phone</th>
+            <th>City</th>
+            <th>Action</th>
+          </tr>
+        </thead>
+        <tbody id="userList">
+          <!-- User list will be populated here -->
+        </tbody>
+      </table>
+
+
+      <script>
+
+            function fetchdata()
+            {
+                var users=JSON.parse(localStorage.getItem('users')) || [];
+
+                var userlist=document.getElementById('userList');
+
+                userlist.innerHTML='';
+
+                users.forEach(function(user,index){
+
+                    var row=userlist.insertRow();
+
+                    var srnocell=row.insertCell(0);
+                    var name=row.insertCell(1);
+                    var usernameCell=row.insertCell(2);
+                    var emailcell=row.insertCell(3);
+                    var phonecell=row.insertCell(4);
+                    var cityCell=row.insertCell(5);
+                    var actionCell=row.insertCell(6);
+
+                    srnocell.textContent=index+1;
+                    name.textContent=user.name;
+                    usernameCell.textContent=user.username;
+                    emailcell.textContent=user.email;
+                    phonecell.textContent=user.phone;
+                    cityCell.textContent=user.city;
+                    actionCell.innerHTML='<button class="btn btn-danger" onclick="deleteUser(' + index + ')">Delete</button>';
+                })
+            }
+
+            function deleteUser(index)
+            {
+                if(confirm('Are you sure you want to delete'))
+                {
+                    var users=JSON.parse(localStorage.getItem('users')) || [];
+
+
+                    users.splice(index,1);
+
+
+                    localStorage.setItem('users',JSON.stringify(users));
+                    fetchdata();
+
+                }
+            }
+
+     </script>
+    
+</body>
+</html>
